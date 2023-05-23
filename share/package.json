@@ -1,0 +1,22 @@
+{
+  "name": "share",
+  "private": true,
+  "scripts": {
+    "build": "tsc --project ./tsconfig.json && tsc --project ./tsconfig.cjs.json",
+    "start:dev": "concurrently \"tsc -w --project ./tsconfig.json\" \"tsc -w --project ./tsconfig.cjs.json\""
+  },
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/mjs/index.js",
+  "types": "./lib/mjs/index.d.ts",
+  "files": [
+    "lib/mjs/*",
+    "lib/cjs/*"
+  ],
+  "dependencies": {
+    "tslib": "^2.5.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "typescript": "^4.9.5"
+  }
+}
